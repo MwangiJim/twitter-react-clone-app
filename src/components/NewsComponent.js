@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
+import { duration } from 'moment'
 
 function NewsComponent(props) {
   return (
     <Container style={props.newsletterstyles}>
       <div className='Left__side'>
-          <p>World news.{props.TimePublished}</p>
+          <p>World news.{moment(props.TimePublished).fromNow()}</p>
           <h3>{props.title}</h3>
           <small>Trending with <i>#{props.Source}</i> and <i>{props.Author}</i></small>
       </div>
